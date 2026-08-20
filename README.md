@@ -26,7 +26,28 @@ bun dev
 
 ## Deploy
 
-Push to GitHub — Cloudflare automatically deploys on every push.
+Pushing to `main` runs `.github/workflows/deploy.yml`, which builds and runs
+`wrangler deploy`. To re-deploy without a commit: Actions tab -> "Deploy to
+Cloudflare" -> Run workflow.
 
-Production secrets are managed in the Cloudflare dashboard:
-**Workers & Pages → your worker → Settings → Variables and Secrets**
+Required GitHub repository secrets (Settings -> Secrets and variables -> Actions):
+
+- `CLOUDFLARE_API_TOKEN` - created from the "Edit Cloudflare Workers" template
+- `CLOUDFLARE_ACCOUNT_ID`
+
+To deploy from your machine instead:
+
+```sh
+bun run build && bunx wrangler deploy
+```
+
+## Production secrets
+
+Worker secrets are separate from the GitHub secrets above, and `wrangler deploy`
+preserves them, so they only need to be set once:
+
+```sh
+bunx wrangler secret put RESEND_API_KEY
+```
+
+Check what is currently set with `bunx wrangler secret list`.
