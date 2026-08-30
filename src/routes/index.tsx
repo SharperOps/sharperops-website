@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import React, { useState } from "react";
 import { SiteFooter } from "@/components/SiteFooter";
 import { sendContactEmail } from "@/serverFunctions/contact";
@@ -13,7 +13,7 @@ export const Route = createFileRoute("/")({
           "SharperOps LLC is an independent AI consulting agency that designs and builds custom AI-powered software solutions across industries.",
       },
       { property: "og:title", content: "SharperOps LLC — Custom AI Consulting" },
-      { property: "og:description", content: "Custom AI solutions, built for your business." }, 
+      { property: "og:description", content: "Custom AI solutions, built for your business." },
     ],
   }),
   component: Index,
@@ -42,9 +42,9 @@ function Nav() {
   return (
     <header className="sticky top-0 z-40 backdrop-blur-md bg-background/80 border-b border-border">
       <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#top" className="font-semibold tracking-tight text-lg">
+        <Link to="/about" className="font-semibold tracking-tight text-lg">
           SharperOps<span className="text-primary">.</span>
-        </a>
+        </Link>
         <nav className="hidden sm:flex items-center gap-8 text-sm text-muted-foreground">
           <a href="#services" className="hover:text-foreground transition-colors">
             Services
