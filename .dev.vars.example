@@ -1,0 +1,3 @@
+# Copy to .dev.vars (gitignored) and fill in real values for `bun dev`.
+# The same names must exist as Worker secrets in production; see README.
+RESEND_API_KEY=

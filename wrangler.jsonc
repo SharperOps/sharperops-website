@@ -8,4 +8,13 @@
     { "pattern": "sharperops.com", "custom_domain": true },
     { "pattern": "www.sharperops.com", "custom_domain": true },
   ],
+  // Production is reachable only via the custom domains above, never at a
+  // *.workers.dev URL. This is already implied by defining `routes`, but is
+  // stated explicitly so it survives someone editing that list.
+  "workers_dev": false,
+  // Preview URLs are an independent setting, and would otherwise follow
+  // `workers_dev` and turn off. Keeping them on lets `wrangler versions upload`
+  // hand out a *.workers.dev URL per uploaded version without touching
+  // production. Used by .github/workflows/preview.yml.
+  "preview_urls": true,
 }
