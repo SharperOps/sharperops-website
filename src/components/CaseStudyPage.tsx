@@ -115,6 +115,21 @@ export function Prose({ children }: { children: ReactNode }) {
   );
 }
 
+export function Steps({ items }: { items: string[] }) {
+  return (
+    <ol className="mt-5 flex flex-col gap-2.5 max-w-[66ch]">
+      {items.map((item, i) => (
+        <li key={item} className="flex gap-3.5 text-base leading-relaxed text-muted-foreground">
+          <span className="flex-none w-5 text-sm font-semibold text-primary tabular-nums pt-0.5">
+            {i + 1}.
+          </span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
 export function BeforeAfter({ rows }: { rows: { before: string; after: string }[] }) {
   return (
     <div className="rounded-lg border border-border bg-card overflow-hidden">

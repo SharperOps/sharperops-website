@@ -9,6 +9,7 @@ import {
   Prose,
   Section,
   Stats,
+  Steps,
 } from "@/components/CaseStudyPage";
 
 export const Route = createFileRoute("/case-studies/agency-lead-routing")({
@@ -69,8 +70,8 @@ function AgencyLeadRouting() {
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
           The agency ran cold email for 15 clients and resold them a CRM to work out of. Every reply
-          was read, matched to a client, qualified, and retyped into that client&rsquo;s CRM by hand
-          — about five minutes a lead, fifteen leads a day.
+          that came back had to be sorted, qualified, and retyped into the right client&rsquo;s CRM
+          before that client ever saw it.
         </p>
 
         <Stats
@@ -80,12 +81,6 @@ function AgencyLeadRouting() {
             { value: "15", label: "Client CRMs kept in sync, unattended" },
           ]}
         />
-
-        <Callout>
-          <strong className="font-semibold">Clients now answer their own leads.</strong> The full
-          conversation history lands in the CRM, so the client can pick the thread up and reply to
-          the customer directly from the system they already work out of.
-        </Callout>
       </section>
 
       <div className="border-t border-border bg-secondary/40">
@@ -94,45 +89,56 @@ function AgencyLeadRouting() {
             <Prose>
               <p>
                 The agency ran cold email campaigns for 15 clients, bringing in about fifteen leads
-                a day between them. Every reply meant the same six steps: work out which client the
-                campaign belonged to, read the reply to judge whether it was a real lead, copy the
-                name, email, company, message text, and the originating email that produced it, add
-                all of it to that client&rsquo;s CRM, then email the client to tell them a lead had
-                come in.
+                a day between them. Every reply went through the same six steps by hand:
               </p>
-              <p>About five minutes each, fifteen times a day.</p>
             </Prose>
+            <Steps
+              items={[
+                "Work out which client the campaign belonged to",
+                "Read the reply and decide whether it was a real lead",
+                "Copy the name, email, and company",
+                "Copy the message text and the original email that drew the reply",
+                "Add all of it to that client's CRM",
+                "Email the client to tell them a lead had come in",
+              ]}
+            />
+            <p className="mt-6 text-base leading-relaxed text-foreground font-medium">
+              Five minutes a lead. Fifteen leads a day.
+            </p>
           </Section>
 
           <Section heading="Before and after">
             <BeforeAfter rows={beforeAfter} />
+            <Callout>
+              <strong className="font-semibold">Clients now answer their own leads.</strong> The
+              full conversation history lands in the CRM, so the client can pick the thread up and
+              reply to the customer directly from the system they already work out of.
+            </Callout>
           </Section>
 
           <Section heading="Every reply now lands in the right client's CRM on its own">
             <Prose>
               <p>
-                The moment a reply arrives, it is matched to the client it belongs to from the
-                sending domain — including every domain variant a brand runs campaigns from — then
-                read and classified so that out-of-office notices and automated bounces never reach
-                the client as leads.
+                The moment a reply arrives, the system reads the sending domain and matches it to
+                the client it belongs to — including every domain variant a brand runs campaigns
+                from. It classifies the reply, filtering out out-of-office notices and automated
+                bounces so they never reach a client as leads.
               </p>
               <p>
-                The customer is found in that client&rsquo;s CRM or created if they aren&rsquo;t
-                there yet, and the message and its conversation history are written into their
-                record. It runs around the clock without anyone starting it.
+                It then finds the customer in that client&rsquo;s CRM, creates them if they
+                aren&rsquo;t there yet, and writes the message and its full conversation history
+                into their record. No one starts it, and no one has to be at a desk.
               </p>
             </Prose>
           </Section>
 
-          <Section heading="Result: six hours a week back, and a lead path that runs itself">
+          <Section heading="Result: six hours a week back, and leads that arrive ready to answer">
             <Prose>
+              <p>Roughly six hours a week — about 310 hours a year — returned to the agency.</p>
               <p>
-                About five minutes a lead across fifteen leads a day — roughly six hours a week, or
-                about 310 hours a year — returned to the agency.
-              </p>
-              <p>
-                Leads reach the right CRM unattended, and clients respond to customers themselves
-                inside the CRM they were already paying for.
+                Leads reach the right CRM unattended, and because the whole conversation comes with
+                them, clients answer their own customers inside the CRM they were already paying
+                for.
               </p>
             </Prose>
           </Section>
