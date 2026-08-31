@@ -16,7 +16,9 @@ import { Route as CancellationPolicyRouteImport } from './routes/cancellation-po
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CaseStudiesIndexRouteImport } from './routes/case-studies.index'
 import { Route as CaseStudiesRentAChefRouteImport } from './routes/case-studies.rent-a-chef'
+import { Route as CaseStudiesLawFirmContractReviewRouteImport } from './routes/case-studies.law-firm-contract-review'
 import { Route as CaseStudiesFamilyOfficeBillingRouteImport } from './routes/case-studies.family-office-billing'
+import { Route as CaseStudiesAgencyLeadRoutingRouteImport } from './routes/case-studies.agency-lead-routing'
 
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
@@ -53,10 +55,22 @@ const CaseStudiesRentAChefRoute = CaseStudiesRentAChefRouteImport.update({
   path: '/case-studies/rent-a-chef',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CaseStudiesLawFirmContractReviewRoute =
+  CaseStudiesLawFirmContractReviewRouteImport.update({
+    id: '/case-studies/law-firm-contract-review',
+    path: '/case-studies/law-firm-contract-review',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const CaseStudiesFamilyOfficeBillingRoute =
   CaseStudiesFamilyOfficeBillingRouteImport.update({
     id: '/case-studies/family-office-billing',
     path: '/case-studies/family-office-billing',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const CaseStudiesAgencyLeadRoutingRoute =
+  CaseStudiesAgencyLeadRoutingRouteImport.update({
+    id: '/case-studies/agency-lead-routing',
+    path: '/case-studies/agency-lead-routing',
     getParentRoute: () => rootRouteImport,
   } as any)
 
@@ -66,7 +80,9 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/terms': typeof TermsRoute
+  '/case-studies/agency-lead-routing': typeof CaseStudiesAgencyLeadRoutingRoute
   '/case-studies/family-office-billing': typeof CaseStudiesFamilyOfficeBillingRoute
+  '/case-studies/law-firm-contract-review': typeof CaseStudiesLawFirmContractReviewRoute
   '/case-studies/rent-a-chef': typeof CaseStudiesRentAChefRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
 }
@@ -76,7 +92,9 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/terms': typeof TermsRoute
+  '/case-studies/agency-lead-routing': typeof CaseStudiesAgencyLeadRoutingRoute
   '/case-studies/family-office-billing': typeof CaseStudiesFamilyOfficeBillingRoute
+  '/case-studies/law-firm-contract-review': typeof CaseStudiesLawFirmContractReviewRoute
   '/case-studies/rent-a-chef': typeof CaseStudiesRentAChefRoute
   '/case-studies': typeof CaseStudiesIndexRoute
 }
@@ -87,7 +105,9 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/terms': typeof TermsRoute
+  '/case-studies/agency-lead-routing': typeof CaseStudiesAgencyLeadRoutingRoute
   '/case-studies/family-office-billing': typeof CaseStudiesFamilyOfficeBillingRoute
+  '/case-studies/law-firm-contract-review': typeof CaseStudiesLawFirmContractReviewRoute
   '/case-studies/rent-a-chef': typeof CaseStudiesRentAChefRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
 }
@@ -99,7 +119,9 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/refund-policy'
     | '/terms'
+    | '/case-studies/agency-lead-routing'
     | '/case-studies/family-office-billing'
+    | '/case-studies/law-firm-contract-review'
     | '/case-studies/rent-a-chef'
     | '/case-studies/'
   fileRoutesByTo: FileRoutesByTo
@@ -109,7 +131,9 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/refund-policy'
     | '/terms'
+    | '/case-studies/agency-lead-routing'
     | '/case-studies/family-office-billing'
+    | '/case-studies/law-firm-contract-review'
     | '/case-studies/rent-a-chef'
     | '/case-studies'
   id:
@@ -119,7 +143,9 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/refund-policy'
     | '/terms'
+    | '/case-studies/agency-lead-routing'
     | '/case-studies/family-office-billing'
+    | '/case-studies/law-firm-contract-review'
     | '/case-studies/rent-a-chef'
     | '/case-studies/'
   fileRoutesById: FileRoutesById
@@ -130,7 +156,9 @@ export interface RootRouteChildren {
   PrivacyRoute: typeof PrivacyRoute
   RefundPolicyRoute: typeof RefundPolicyRoute
   TermsRoute: typeof TermsRoute
+  CaseStudiesAgencyLeadRoutingRoute: typeof CaseStudiesAgencyLeadRoutingRoute
   CaseStudiesFamilyOfficeBillingRoute: typeof CaseStudiesFamilyOfficeBillingRoute
+  CaseStudiesLawFirmContractReviewRoute: typeof CaseStudiesLawFirmContractReviewRoute
   CaseStudiesRentAChefRoute: typeof CaseStudiesRentAChefRoute
   CaseStudiesIndexRoute: typeof CaseStudiesIndexRoute
 }
@@ -186,11 +214,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CaseStudiesRentAChefRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/case-studies/law-firm-contract-review': {
+      id: '/case-studies/law-firm-contract-review'
+      path: '/case-studies/law-firm-contract-review'
+      fullPath: '/case-studies/law-firm-contract-review'
+      preLoaderRoute: typeof CaseStudiesLawFirmContractReviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/case-studies/family-office-billing': {
       id: '/case-studies/family-office-billing'
       path: '/case-studies/family-office-billing'
       fullPath: '/case-studies/family-office-billing'
       preLoaderRoute: typeof CaseStudiesFamilyOfficeBillingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/case-studies/agency-lead-routing': {
+      id: '/case-studies/agency-lead-routing'
+      path: '/case-studies/agency-lead-routing'
+      fullPath: '/case-studies/agency-lead-routing'
+      preLoaderRoute: typeof CaseStudiesAgencyLeadRoutingRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -202,7 +244,9 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyRoute: PrivacyRoute,
   RefundPolicyRoute: RefundPolicyRoute,
   TermsRoute: TermsRoute,
+  CaseStudiesAgencyLeadRoutingRoute: CaseStudiesAgencyLeadRoutingRoute,
   CaseStudiesFamilyOfficeBillingRoute: CaseStudiesFamilyOfficeBillingRoute,
+  CaseStudiesLawFirmContractReviewRoute: CaseStudiesLawFirmContractReviewRoute,
   CaseStudiesRentAChefRoute: CaseStudiesRentAChefRoute,
   CaseStudiesIndexRoute: CaseStudiesIndexRoute,
 }
