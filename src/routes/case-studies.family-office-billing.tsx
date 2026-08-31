@@ -83,10 +83,6 @@ function FamilyOfficeBilling() {
           </strong>{" "}
           Every billing email is routed to the billing team as a draft.
         </Callout>
-
-        <p className="inline-flex items-center gap-2 mt-6 rounded-full border border-dashed border-border px-3.5 py-1.5 text-[13px] text-muted-foreground">
-          <span aria-hidden="true">🔒</span> Client name withheld
-        </p>
       </section>
 
       <div className="border-t border-border bg-secondary/40">
