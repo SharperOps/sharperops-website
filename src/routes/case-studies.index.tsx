@@ -49,11 +49,6 @@ function CaseStudiesIndex() {
         <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">
           Work we&rsquo;ve shipped.
         </h1>
-        <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-          A kitchen staffing firm and a $1.7B family office. Same problem in both: senior time going
-          to work that shouldn&rsquo;t need a person.
-        </p>
-
         <div className="grid md:grid-cols-2 gap-5 mt-11">
           {studies.map((study) => (
             <Link
