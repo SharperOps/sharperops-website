@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import React, { useState } from "react";
 import { SiteFooter } from "@/components/SiteFooter";
 import { sendContactEmail } from "@/serverFunctions/contact";
@@ -49,6 +49,9 @@ function Nav() {
           <a href="#services" className="hover:text-foreground transition-colors">
             Services
           </a>
+          <Link to="/case-studies" className="hover:text-foreground transition-colors">
+            Case Studies
+          </Link>
           <a href="#about" className="hover:text-foreground transition-colors">
             About
           </a>
