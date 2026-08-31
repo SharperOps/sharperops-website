@@ -39,6 +39,15 @@ const studies = [
     summary:
       "The full billing cycle automated through the Addepar API — with a human approval gate kept on every client email.",
   },
+  {
+    to: "/case-studies/law-firm-contract-review",
+    tag: "Legal",
+    value: "~270 hrs",
+    valueLabel: "Returned per year",
+    title: "How a law firm got an hour back on every contract",
+    summary:
+      "Every contract scored against the firm's own playbook, with risky clauses flagged and redlined before counsel reads it.",
+  },
 ] as const;
 
 function CaseStudiesIndex() {
