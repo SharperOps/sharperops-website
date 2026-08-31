@@ -14,6 +14,9 @@ import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as CancellationPolicyRouteImport } from './routes/cancellation-policy'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CaseStudiesIndexRouteImport } from './routes/case-studies.index'
+import { Route as CaseStudiesRentAChefRouteImport } from './routes/case-studies.rent-a-chef'
+import { Route as CaseStudiesFamilyOfficeBillingRouteImport } from './routes/case-studies.family-office-billing'
 
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
@@ -40,6 +43,22 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CaseStudiesIndexRoute = CaseStudiesIndexRouteImport.update({
+  id: '/case-studies/',
+  path: '/case-studies/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CaseStudiesRentAChefRoute = CaseStudiesRentAChefRouteImport.update({
+  id: '/case-studies/rent-a-chef',
+  path: '/case-studies/rent-a-chef',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CaseStudiesFamilyOfficeBillingRoute =
+  CaseStudiesFamilyOfficeBillingRouteImport.update({
+    id: '/case-studies/family-office-billing',
+    path: '/case-studies/family-office-billing',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -47,6 +66,9 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/terms': typeof TermsRoute
+  '/case-studies/family-office-billing': typeof CaseStudiesFamilyOfficeBillingRoute
+  '/case-studies/rent-a-chef': typeof CaseStudiesRentAChefRoute
+  '/case-studies/': typeof CaseStudiesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -54,6 +76,9 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/terms': typeof TermsRoute
+  '/case-studies/family-office-billing': typeof CaseStudiesFamilyOfficeBillingRoute
+  '/case-studies/rent-a-chef': typeof CaseStudiesRentAChefRoute
+  '/case-studies': typeof CaseStudiesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -62,6 +87,9 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/terms': typeof TermsRoute
+  '/case-studies/family-office-billing': typeof CaseStudiesFamilyOfficeBillingRoute
+  '/case-studies/rent-a-chef': typeof CaseStudiesRentAChefRoute
+  '/case-studies/': typeof CaseStudiesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -71,8 +99,19 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/refund-policy'
     | '/terms'
+    | '/case-studies/family-office-billing'
+    | '/case-studies/rent-a-chef'
+    | '/case-studies/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/cancellation-policy' | '/privacy' | '/refund-policy' | '/terms'
+  to:
+    | '/'
+    | '/cancellation-policy'
+    | '/privacy'
+    | '/refund-policy'
+    | '/terms'
+    | '/case-studies/family-office-billing'
+    | '/case-studies/rent-a-chef'
+    | '/case-studies'
   id:
     | '__root__'
     | '/'
@@ -80,6 +119,9 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/refund-policy'
     | '/terms'
+    | '/case-studies/family-office-billing'
+    | '/case-studies/rent-a-chef'
+    | '/case-studies/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -88,6 +130,9 @@ export interface RootRouteChildren {
   PrivacyRoute: typeof PrivacyRoute
   RefundPolicyRoute: typeof RefundPolicyRoute
   TermsRoute: typeof TermsRoute
+  CaseStudiesFamilyOfficeBillingRoute: typeof CaseStudiesFamilyOfficeBillingRoute
+  CaseStudiesRentAChefRoute: typeof CaseStudiesRentAChefRoute
+  CaseStudiesIndexRoute: typeof CaseStudiesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -127,6 +172,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/case-studies/': {
+      id: '/case-studies/'
+      path: '/case-studies'
+      fullPath: '/case-studies/'
+      preLoaderRoute: typeof CaseStudiesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/case-studies/rent-a-chef': {
+      id: '/case-studies/rent-a-chef'
+      path: '/case-studies/rent-a-chef'
+      fullPath: '/case-studies/rent-a-chef'
+      preLoaderRoute: typeof CaseStudiesRentAChefRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/case-studies/family-office-billing': {
+      id: '/case-studies/family-office-billing'
+      path: '/case-studies/family-office-billing'
+      fullPath: '/case-studies/family-office-billing'
+      preLoaderRoute: typeof CaseStudiesFamilyOfficeBillingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -136,6 +202,9 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyRoute: PrivacyRoute,
   RefundPolicyRoute: RefundPolicyRoute,
   TermsRoute: TermsRoute,
+  CaseStudiesFamilyOfficeBillingRoute: CaseStudiesFamilyOfficeBillingRoute,
+  CaseStudiesRentAChefRoute: CaseStudiesRentAChefRoute,
+  CaseStudiesIndexRoute: CaseStudiesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
