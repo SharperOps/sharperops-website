@@ -14,19 +14,19 @@ import {
 export const Route = createFileRoute("/case-studies/agency-lead-routing")({
   head: () => ({
     meta: [
-      { title: "A marketing agency: six hours a day back from lead entry — SharperOps LLC" },
+      { title: "A marketing agency: six hours a week back from lead entry — SharperOps LLC" },
       {
         name: "description",
         content:
-          "A marketing agency was hand-entering 75 cold email leads a day into 15 client CRMs at five minutes each. Automating it returned about six hours a day.",
+          "A marketing agency was hand-entering cold email leads into 15 client CRMs at five minutes each. Automating it returned about six hours a week.",
       },
       {
         property: "og:title",
-        content: "How a marketing agency got six hours a day back from manual lead entry",
+        content: "How a marketing agency got six hours a week back from manual lead entry",
       },
       {
         property: "og:description",
-        content: "75 leads a day routed into 15 client CRMs, unattended.",
+        content: "Every cold email reply routed into the right client's CRM, unattended.",
       },
     ],
   }),
@@ -65,19 +65,19 @@ function AgencyLeadRouting() {
         <Breadcrumb current="Agency Lead Routing" />
         <Eyebrow>Marketing · Lead Routing Automation</Eyebrow>
         <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-[1.08] max-w-3xl text-balance">
-          How a marketing agency got six hours a day back from manual lead entry
+          How a marketing agency got six hours a week back from manual lead entry
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
           The agency ran cold email for 15 clients and resold them a CRM to work out of. Every reply
           was read, matched to a client, qualified, and retyped into that client&rsquo;s CRM by hand
-          — about five minutes a lead, seventy-five leads a day.
+          — about five minutes a lead, fifteen leads a day.
         </p>
 
         <Stats
           items={[
-            { value: "6 hrs", label: "Returned every day" },
-            { value: "~1,500 hrs", label: "Returned every year" },
-            { value: "75", label: "Leads routed per day, unattended" },
+            { value: "6 hrs", label: "Returned every week" },
+            { value: "~310 hrs", label: "Returned every year" },
+            { value: "15", label: "Client CRMs kept in sync, unattended" },
           ]}
         />
 
@@ -90,17 +90,17 @@ function AgencyLeadRouting() {
 
       <div className="border-t border-border bg-secondary/40">
         <div className="max-w-5xl mx-auto px-6 py-20">
-          <Section heading="Six hours a day retyping leads into fifteen CRMs">
+          <Section heading="Six hours a week retyping leads into fifteen client CRMs">
             <Prose>
               <p>
-                The agency ran cold email campaigns for 15 clients, each averaging about five leads
-                a day. Every reply meant the same six steps: work out which client the campaign
-                belonged to, read the reply to judge whether it was a real lead, copy the name,
-                email, company, message text, and the originating email that produced it, add all of
-                it to that client&rsquo;s CRM, then email the client to tell them a lead had come
-                in.
+                The agency ran cold email campaigns for 15 clients, bringing in about fifteen leads
+                a day between them. Every reply meant the same six steps: work out which client the
+                campaign belonged to, read the reply to judge whether it was a real lead, copy the
+                name, email, company, message text, and the originating email that produced it, add
+                all of it to that client&rsquo;s CRM, then email the client to tell them a lead had
+                come in.
               </p>
-              <p>About five minutes each, seventy-five times a day.</p>
+              <p>About five minutes each, fifteen times a day.</p>
             </Prose>
           </Section>
 
@@ -124,11 +124,11 @@ function AgencyLeadRouting() {
             </Prose>
           </Section>
 
-          <Section heading="Result: six hours a day back, and a lead path that runs itself">
+          <Section heading="Result: six hours a week back, and a lead path that runs itself">
             <Prose>
               <p>
-                About five minutes a lead across seventy-five leads a day — roughly six hours daily,
-                or 1,500 hours a year — returned to the agency.
+                About five minutes a lead across fifteen leads a day — roughly six hours a week, or
+                about 310 hours a year — returned to the agency.
               </p>
               <p>
                 Leads reach the right CRM unattended, and clients respond to customers themselves

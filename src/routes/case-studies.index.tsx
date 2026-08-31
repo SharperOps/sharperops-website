@@ -51,11 +51,11 @@ const studies = [
   {
     to: "/case-studies/agency-lead-routing",
     tag: "Marketing",
-    value: "~1,500 hrs",
+    value: "~310 hrs",
     valueLabel: "Returned per year",
-    title: "How a marketing agency got six hours a day back from manual lead entry",
+    title: "How a marketing agency got six hours a week back from manual lead entry",
     summary:
-      "75 cold email replies a day routed into 15 client CRMs with full conversation history, so clients answer their own leads.",
+      "Cold email replies routed into 15 client CRMs with full conversation history, so clients answer their own leads.",
   },
 ] as const;
 
